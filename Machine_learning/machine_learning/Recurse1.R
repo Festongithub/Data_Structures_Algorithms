@@ -1,0 +1,133 @@
+#!/usr/bin/R
+
+# create a matrix in R
+ thismatrix <- matrix(c(34, 56, 78, 90, 21, 34), nrow = 3, ncol =2)
+ # accessing the elements in matrix
+ thismatrix[3, 2]
+ thismatrix[2, 2]
+
+ # build a new matrix
+
+ newNums <- matrix(c(12, 34, 56, 78, 90, 32, 45, 78, 43,97), nrow = 10, ncol = 2)
+ # accessing the row 
+newNums[4,]
+ # accessing the column
+ #newNums[, 4]
+
+ # acessing more thanOne row
+
+ #newNums[c(9, 1),]
+
+ # accessing more than one column
+
+ #newNums[ , c(3, 2)]
+
+ # Addition of rows and columns 
+nums <- matrix(c(34 , 56, 78, 43, 23, 67), nrow = 3, ncol = 2)
+test <- matrix(c(79, 43, 65, 87, 32,57 ), nrow = 3, ncol = 2)
+
+bin <- cbind(nums, c(98, 43, 45))
+newrows  <- rbind(nums, c(95, 49))
+print(bin)
+print(newrows)
+
+print(bin * 78)
+
+# remove the rows and columns
+
+getnew <- bin[ -c(1), -c(1) ]
+getnew
+
+
+ "45"  %in% getnew
+# number of rows 
+dim(getnew)
+
+
+# define length of the matrix
+
+length(getnew)
+
+
+# looping through a matrix
+
+for (rows  in 1: nrow(getnew)){
+	for(columns in 1 : ncol(getnew)) {
+		print(getnew[rows, columns])
+	}
+}
+
+
+# combine two matrices
+
+newgame <- rbind(nums, test)
+newgame
+
+newcol <- cbind(nums, test)
+
+newcol
+
+
+
+# arrays creation
+ alpha <-  c(1:25)
+print(alpha)
+
+multiarray <- array(alpha, dim = c( 4, 3, 2))
+print(multiarray)
+
+#accessing the items in an array
+multiarray[c(1), , 1]
+multiarray[, c(1), 1]
+
+# dim
+dim(multiarray)
+
+for (x in multiarray){
+	print  (x * x)
+}
+
+# create data frames
+
+numbers <- data.frame(
+		      Training = c("Strength", "Stamina", "Other"),
+		      Pulse = c(100, 150, 120),
+		      Duration = c (60, 30, 35)
+		      )
+numbers
+
+counties <- data.frame(
+		       Name = c("Nairobi", "Nakuru", "Kisumu", "Mombasa"),
+		       Population  =  c( 5454322, 78900, 890004, 789054),
+		       Headquaters = c("Nairobi", "Nakuru town", "Kisumu Municipality", "Likoni")
+		       )
+summary(counties)
+# access the items 
+# $ , [] [[]] 
+counties$Headquaters
+counties[["Headquaters"]]
+counties["Headquaters"]
+
+
+new_row  = rbind(counties, c("Uasin Gishu", 780543, "Eldoret"))
+new_column = cbind(counties, Steps = c("Nyeri", 321190, "Kibra" , "Mathira"))
+nrow(new_column)
+ncol(new_column)
+
+# factoring
+getcont = factor(c("Jazz", "Rock", "Classic", "Classic", "Pop", "Jazz", "Rock", "Jazz"))
+print(getcont)
+# levels
+levels(getcont)
+getcont[1]
+
+streets = factor(c("Moi venue", "Muindi Mbingu", "Kibra", "Lavington", "Kibra", "Soweto", "Moi venue"), levels = c("Kibra", "Moi venue"))
+levels(streets)
+# length 
+length(streets)
+
+# change items
+
+# plot items
+plot(8, 9)
+
