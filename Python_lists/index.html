@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<style> body { background-image: url('https://academy.hackthebox.com/images/logo.svg'); } </style>
+<body>
+    <button onclick="inputFunction()">Click to enter your name</button>
+    <p id="output"></p>
+    <a href="http://www.hackthebox.com">Click Me</a>
+
+    <script>
+        function inputFunction() {
+            var input = prompt("Please enter your name", "");
+
+            if (input != null) {
+                document.getElementById("output").innerHTML = "Your name is " + input;
+            }
+        }
+    </script>
+</body>
+
+</html>
