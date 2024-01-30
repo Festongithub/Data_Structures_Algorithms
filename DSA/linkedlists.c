@@ -29,8 +29,13 @@ int main ()
 
     head = &n3;
     n3.next = &n2;
-    n2.next = &n1;
+    n2.next = &n1; 
     n1.next = NULL;
 
+    node n4;
+    n4.value = 15;
+    n4.next = &n3;
+    n2.next = &n4;
+    
     printlist(head);
 }
